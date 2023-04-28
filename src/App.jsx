@@ -1,35 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 //import './App.css'
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [error, setError] = useState("");
 
   async function fetchAPI() {
-    setLoading(true);
+    setIsLoading(true);
     try {
       const response = await fetch(
         "https://jsonplaceholder.typicode.com/comments"
       );
+
+      if (!response.ok) {
+        throw new Error(`Error! status: ${response.status}`);
+      }
+
       const data = await response.json();
       if (data) {
         setData(data);
       }
     } catch (error) {
-      console.log(error);
+      setError(error.message);
     }
 
-    setLoading(false);
+    setIsLoading(false);
   }
-
-  useEffect(() => {
-    fetchAPI();
-  }, []);
 
   return (
     <div>
-      {loading ? (
-        "Loading..."
+      {error && <p>{error}</p>}
+      <button onClick={fetchAPI}>Fetch Data</button>
+      {isLoading ? (
+        <p>Loading...</p>
       ) : (
         <div>
           {data &&
