@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import './App.css'
+import "./App.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,13 +29,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="container">
       {error && <p>{error}</p>}
       <button onClick={fetchAPI}>Fetch Data</button>
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div className="data-container">
           {data &&
             data.map((item) => (
               <div key={item.id}>
