@@ -1,4 +1,27 @@
-:root {
+body {
+  padding: 1rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+.fetch-btn {
+  font-weight: bold;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  border: 2px solid orange;
+  background-color: beige;
+}
+.post-id {
+  background-color: rgb(238, 214, 176);
+}
+em {
+  font-weight: bold;
+}
+
+/*:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -67,3 +90,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/

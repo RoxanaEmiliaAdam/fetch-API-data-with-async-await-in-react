@@ -1,23 +1,3 @@
-body {
-  padding: auto;
-  display: flex;
-  text-align: center;
-  background-color: bisque;
-}
-
-.fetch-btn {
-  font-weight: bold;
-  font-size: medium;
-  border: 2px solid orange;
-  background-color: beige;
-}
-.post-id {
-  background-color: rgb(238, 214, 176);
-}
-em {
-  font-weight: bold;
-}
-
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
