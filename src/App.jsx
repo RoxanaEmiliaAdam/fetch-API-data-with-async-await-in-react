@@ -31,7 +31,9 @@ function App() {
   return (
     <div className="container">
       {error && <p>{error}</p>}
-      <button onClick={fetchAPI}>Fetch Data</button>
+      <button className="fetch-btn" onClick={fetchAPI}>
+        Fetch Data
+      </button>
       {isLoading ? (
         <p>Loading...</p>
       ) : (
@@ -39,10 +41,13 @@ function App() {
           {data &&
             data.map((item) => (
               <div key={item.id}>
-                <p>
+                <p className="post-id">
                   Post ID: {item.postId} and ID: {item.id}
                 </p>
-                <p>Comment: {item.body}</p>
+                <p>
+                  {" "}
+                  <em> Comment:</em> {item.body}
+                </p>
               </div>
             ))}
         </div>
