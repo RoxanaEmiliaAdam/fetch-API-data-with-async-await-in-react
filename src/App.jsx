@@ -15,15 +15,17 @@ function App() {
       );
 
       if (!response.ok) {
-        throw new Error(`Error! status: ${response.status}`);
+        throw Error(`Error! Data could not be fetched`);
       }
 
       const data = await response.json();
       if (data) {
         setData(data);
+        setError("");
       }
     } catch (error) {
       setError(error.message);
+      setIsLoading(false);
     }
 
     setIsLoading(false);
