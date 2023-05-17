@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
+
 import "./index.css";
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
       }
     } catch (error) {
       setError(error.message);
-      setIsLoading(false);
     }
 
     setIsLoading(false);
