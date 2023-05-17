@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import "./index.css";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
 
@@ -40,7 +41,7 @@ function App() {
         <div className="data-container">
           {data &&
             data.map((item) => (
-              <div key={item.id}>
+              <div className="item" key={item.id}>
                 <p className="post-id">
                   Post ID: {item.postId} and ID: {item.id}
                 </p>

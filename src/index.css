@@ -3,6 +3,8 @@ body {
   display: flex;
   text-align: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: bisque;
 }
 
@@ -13,12 +15,21 @@ body {
   align-items: center;
   border: 2px solid orange;
   background-color: beige;
+  margin: auto;
 }
 .post-id {
   background-color: rgb(238, 214, 176);
 }
 em {
   font-weight: bold;
+}
+.item {
+  border: 2px solid grey;
+  border-radius: 25px;
+
+  margin-bottom: 5px;
+  margin-top: 5px;
+  max-width: 350px;
 }
 
 /*:root {
