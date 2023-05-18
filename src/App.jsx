@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ItemList from "./components/ItemList";
 
 import "./index.css";
 
@@ -39,20 +40,7 @@ function App() {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div className="data-container">
-          {data &&
-            data.map((item) => (
-              <div className="item" key={item.id}>
-                <p className="post-id">
-                  Post ID: {item.postId} and ID: {item.id}
-                </p>
-                <p>
-                  {" "}
-                  <em> Comment:</em> {item.body}
-                </p>
-              </div>
-            ))}
-        </div>
+        <div className="data-container">{data && <ItemList data={data} />}</div>
       )}
     </div>
   );
